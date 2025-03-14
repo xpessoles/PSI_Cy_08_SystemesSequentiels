@@ -1,56 +1,52 @@
-%\setchapterimage{Fond_IA.png}
-\setchapterpreamble[u]{\margintoc}
-
-\chapter{Systèmes séquentiels}
 %%%% Paramétrage du cours %%%%
-%\def\xxactivite{Cours}
-%\def\xxauteur{\textsl{Xavier Pessoles}}
-%
-%\fichefalse
-%\proftrue
-%\tdfalse
-%\courstrue
-%
-%\def\xxnumchapitre{Chapitre 2 \vspace{.2cm}}
-%\def\xxchapitre{\hspace{.12cm} Systèmes séquentiels}
-%
-%
-%\def\xxcompetences{%
-%\textsl{%
-%\textbf{Savoirs et compétences :}\\
-%\begin{itemize}[label=\ding{112},font=\color{ocre}] 
-%\item ** %B2-10 : Déterminer les caractéristiques d'un solide ou d'un ensemble de solides indéformables.
-%\end{itemize}
-%}}
-%
-%
-%\def\xxfigures{
-%\begin{center}
-%\includegraphics[width=.95\textwidth]{fig_0a}
-%
-%\vspace{1cm}
-%
-%\includegraphics[width=.95\textwidth]{fig_0b}
-%
-%\vspace{1cm}
-%
-%\includegraphics[width=.95\textwidth]{fig_0c}
-%%\textit{Digicode}
-%\end{center}
-%}%figues de la page de garde
-%
-%\input{\repStyle/new_pagegarde}
-%
-%\setlength{\columnseprule}{.1pt}
-%
-%\vspace{2cm}
-%\pagestyle{fancy}
-%\thispagestyle{plain}
-%
-%%%%%%%%%%%%
-%
-%
-%
+\def\xxactivite{Cours}
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+\fichefalse
+\proftrue
+\tdfalse
+\courstrue
+
+\def\xxnumchapitre{Chapitre 2 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Systèmes séquentiels}
+
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+\item ** %B2-10 : Déterminer les caractéristiques d'un solide ou d'un ensemble de solides indéformables.
+\end{itemize}
+}}
+
+
+\def\xxfigures{
+\begin{center}
+\includegraphics[width=.95\textwidth]{fig_0a}
+
+\vspace{1cm}
+
+\includegraphics[width=.95\textwidth]{fig_0b}
+
+\vspace{1cm}
+
+\includegraphics[width=.95\textwidth]{fig_0c}
+%\textit{Digicode}
+\end{center}
+}%figues de la page de garde
+
+\input{\repStyle/new_pagegarde}
+
+\setlength{\columnseprule}{.1pt}
+
+\vspace{2cm}
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+%%%%%%%%%%%
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{La fonction mémoire}
 
@@ -453,7 +449,7 @@ Pour variable = valeur initiale, jusqu'à valeur maximale, faire...
 \bibitem{5}{Olivier Le Gallo, Systèmes à événements discrets, Lycée Clémenceau, Nantes, \url{http://olivier.legallo.pagesperso-orange.fr/documents/SED.pdf}.}
 \end{thebibliography}
 
-
+\end{document}
 
 
 
