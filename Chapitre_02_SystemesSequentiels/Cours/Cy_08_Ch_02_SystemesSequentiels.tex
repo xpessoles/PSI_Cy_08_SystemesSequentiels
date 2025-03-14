@@ -111,15 +111,15 @@ Que se passe-t-il lors de l'appui simultané sur marche et arrêt.
 
 \subsection{Réalisation d'une mémoire}
 \subsubsection*{Exmple : mémoire à effacement prioritaire}
-Dans ce cas, le moteur s'allume lorsque $m$ est pressé. Il est éteint lorsque $a$ est pressé ou lorsque $m$ et $a$ sont pressés simultanément.
- 
- 
-\begin{minipage}[c]{.5\linewidth}
+\begin{marginfigure}
 \begin{center}
 \includegraphics[width=\textwidth]{mem_eff}
 \end{center}
-\end{minipage} \hfill
-\begin{minipage}[c]{.47\linewidth}
+\end{marginfigure}
+Dans ce cas, le moteur s'allume lorsque $m$ est pressé. Il est éteint lorsque $a$ est pressé ou lorsque $m$ et $a$ sont pressés simultanément.
+ 
+ 
+ 
 Il est possible de traduire le fonctionnement du moteur par l'équation booléenne suivante : 
 $$
 M = \overline{a} \cdot \left(m +  x \right)
@@ -127,20 +127,18 @@ $$
 Ainsi dans un premier temps, en appuyant sur $m$ le relais est actionné, $x$ passe donc à 1 dans le circuit de puissance (allumant ainsi le moteur) \textbf{et} dans le circuit de commande. On effectue ainsi un \textbf{auto maintien}. 
 
 On comprend aisément qu'un appui simultané sur $a$ et $m$ provoque une désactivation du relais et donc un arrêt du moteur. 
-\end{minipage}
-
-\vspace{.2cm}
 
 Lorsqu'on utilise une technologie électronique, il est courant d'utiliser de réaliser un câblage en utilisant des cellules NOR. 
 
-\vspace{.2cm}
 
-\begin{minipage}[c]{.3\linewidth}
+
+\begin{marginfigure}
 \begin{center}
 \includegraphics[width=\textwidth]{mem_eff_nor}
 \end{center}
-\end{minipage} \hfill
-\begin{minipage}[c]{.2\linewidth}
+\end{marginfigure}
+
+\begin{minipage}[c]{.3\linewidth}
 \begin{center}
 \begin{tabular}{|c|c|c||c|}
 \hline
@@ -157,7 +155,7 @@ m & a & x & Q \\
 \end{tabular}
 \end{center}
 \end{minipage} \hfill
-\begin{minipage}[c]{.4\linewidth}
+\begin{minipage}[c]{.6\linewidth}
 Il  n'est pas directement possible d'écrire directement la table de vérité de la sortie $Q$ en fonction de $a$ et de $b$. Il faut avoir recours à une variable interne $x$. 
 
 On retrouve bien l'équation précédente : 
@@ -277,33 +275,25 @@ Pour passer d'un état à l'autre, on utilise des transitions. À ces transition
 %correspondants. Chaque transition peut être qualifiée par un évènement, une
 %condition de garde et un effet.
 %\end{methode}
-%
-\begin{exemple}
-\textit{Commande tout ou rien d'un moteur}
 
-\vspace{.2cm}
-\noindent
-\begin{minipage}[c]{.48\linewidth}
+
+
+\begin{marginfigure}
+\includegraphics[width=\textwidth]{Commandemoteur}
+\end{marginfigure}
+
+%
+\begin{exemple}[Commande tout ou rien d'un moteur]
 Deux états internes du système cohabitent. Dans un cas le moteur est en marche, dans l’autre il est à l’arrêt.
 
 Les conditions de passage d’un état à un autre se font à l’aide des variables d’entrée arrêt « a » et marche « m ».
 
-
 L’activité « Marche moteur » peut être détaillée dans un diagramme d’activité. Elle comporterait l’action « distribuer l’énergie ». Son exécution ne nécessite pas de temps significatif, elle est associée à un ordre de commande en direction du préactionneur du moteur (un contacteur électrique à arrêt prioritaire).
-\end{minipage} \hfill
-\begin{minipage}[c]{.46\linewidth}
-\begin{center}
-\includegraphics[width=\textwidth]{Commandemoteur}
-\end{center}
-\end{minipage}
-
 \end{exemple}
 
 
-\begin{defi}[Activité, action]
-
+\begin{defi}[Activité et action]
 En SysML une activité a la propriété de durer un certain temps. Une action est quant à elle instantanée. 
-
 \end{defi}
 \subsection{Utilisation des pseudo-états}
 
@@ -313,9 +303,7 @@ Les pseudo-états permettent d’utiliser des fonctionnalités avancées sans tr
 Il est alors possible de montrer des sélections de séquences d’états (évolutions avec alternatives), des structures parallèles (évolutions simultanées), \textit{etc}.
 \end{defi}
 
-\begin{exemple}
-
-\textit{Commande tout ou rien (TOR) d’un moteur}
+\begin{exemple}[Commande tout ou rien (TOR) d’un moteur]
 
 Un diagramme d’états «~choix de mode~» de niveau hiérarchique supérieur à celui décrit précédemment («~commande moteur~»), permet de le démarrer selon deux modes :
 \begin{itemize}
@@ -333,37 +321,33 @@ On ne rentrera pas dans le détail des états composites. Ceux-ci permettent de 
 
 Il existe aussi des états composites << orthogonaux >> permettant de traduire la mise en parallèles d'états. 
 
+\clearpage
+
 \section{Structures algorithmiques}
 \subsection{Affectation}
+\begin{marginfigure}
+\includegraphics[width=\textwidth]{etat_affectation}
+\caption{Diagramme d'états -- Affectation}
+\end{marginfigure}
+
+\begin{marginfigure} 
+\includegraphics[width=\textwidth]{activite_affectation}
+\caption{Diagramme d'activité -- Affectation}
+\end{marginfigure}
+
+
 L’affectation d’une valeur à une variable peut se faire à l’aide d’une action. Cela ne prend pas
 de temps significatif.
 
-\begin{minipage}[c]{.48\linewidth}
-\begin{center}
-\includegraphics[width=\textwidth]{etat_affectation}
-
-\textit{Diagramme d'états -- Affectation}
-\end{center}
-\end{minipage} \hfill
-\begin{minipage}[c]{.48\linewidth}
-\begin{center}
-\includegraphics[width=.75\textwidth]{activite_affectation}
-
-\textit{Diagramme d'activité -- Affectation}
-\end{center}
-\end{minipage}
-
 \subsection{Groupe d'instructions}
+
+\begin{marginfigure}
+\includegraphics[width=\textwidth]{GroupeInstruction}
+\caption{Groupe d'instructions}
+\end{marginfigure}
 
 Un groupe ou un bloc d’instructions peut être une séquence d’un diagramme
 d’activité. Cela correspond à une succession d’actions et / ou d’activités.
-
-\begin{center}
-\includegraphics[width=.5\textwidth]{GroupeInstruction}
-
-\textit{Groupe d'instructions}
-\end{center}
-
 
 
 \subsection{Fonctions et procédures}
