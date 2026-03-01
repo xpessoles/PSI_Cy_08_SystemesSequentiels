@@ -1,0 +1,260 @@
+% "{'classe':('PSI'),'chapitre':'seq_stm','type':('application'),'titre':'Skypod, système automatisé de préparation de commande', 'source':'CCINP MP 2024','comp':('SEQ-01','SEQ-03'),'corrige':True}"
+%\setchapterimage{bandeau}
+\chapter*{Application \arabic{cptApplication} \\ 
+Skypod, système automatisé de préparation de commande $\star\star$
+-- \ifprof Corrigé \else Sujet \fi}
+\addcontentsline{toc}{section}{Application \arabic{cptApplication} : 
+Skypod, système automatisé de préparation de commande  $\star\star$ 
+-- \ifprof Corrigé \else Sujet \fi}
+
+\iflivret \stepcounter{cptApplication} \else
+\ifprof  \stepcounter{cptApplication} \else \fi
+\fi
+
+\setcounter{question}{0}
+\marginnote{CCINP MP 2024.}
+\marginnote{\xpComp{SEQ}{01}\xpComp{SEQ}{03}}
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{Cy_08_02_STM_TD_04_Skypod}
+\end{marginfigure}
+
+
+
+
+%\section*{Skypod, système automatisé de préparation de commande}
+\section*{Présentation}
+Le système Skypod est une solution d'aide à la préparation de commande dans des zones de stockage de grande capacité. \sidenote{Il est conçu en France (région Hauts-de-France) par la société Exotec.}
+
+L'une de ses spécificités est son robot manipulateur de bac qui peut évoluer dans les trois dimensions. Il peut ainsi se déplacer sur le sol pour circuler dans les allées et rejoindre les postes de livraison (figure 1). Mais il peut également évoluer verticalement pour atteindre les bacs dans lesquels les produits sont stockés (figure 2).
+
+\begin{minipage}{.45\linewidth}
+
+\begin{center}
+  \includegraphics[width=\textwidth]{1b2a6e18-b595-44db-a0d3-72f701a7df8f-02_460_675_1023_278}
+\captionof{figure}{Robot évoluant horizontalement}
+\end{center}
+\end{minipage} \hfill
+\begin{minipage}{.45\linewidth}
+\begin{center}
+  \includegraphics[width=\textwidth]{1b2a6e18-b595-44db-a0d3-72f701a7df8f-02_467_686_1018_1151}
+\captionof{figure}{Robot évoluant verticalement}
+\end{center}
+\end{minipage}
+
+%Quatre composants permettent de mettre en œuvre cette solution (figure 4) :
+%
+%\begin{itemize}
+%  \item la flotte de robots qui transporte les bacs entre opérateurs et zones de stockage;
+%  \item les racks, permettant de stocker les bacs, et dont le positionnement et la structure permettent les déplacements horizontaux et verticaux des robots;
+%  \item les stations qui permettent aux opérateurs de déposer et récupérer les produits dans les bacs apportés par les robots ;
+%  \item le serveur permettant de gérer la flotte de robots en lien avec les consignes données par les stations.
+%\end{itemize}
+%
+%Ce sujet s'intéresse particulièrement aux déplacements du robot. Un extrait du cahier des charges est donné sous forme de diagramme d'exigence par la figure 25 de l'annexe 2.
+%
+%\begin{figure}[h]
+%\begin{center}
+%  \includegraphics[width=\textwidth]{1b2a6e18-b595-44db-a0d3-72f701a7df8f-02_291_1675_2197_196}
+%
+%\caption{Figure 3 - Diagramme de définition de blocs d'un robot Skypod}
+%\end{center}
+%\end{figure}
+%
+%\begin{figure}[h]
+%\begin{center}
+%  \includegraphics[width=\textwidth]{1b2a6e18-b595-44db-a0d3-72f701a7df8f-03_524_1671_205_198}
+%
+%\caption{Figure 4 - Principaux composants de la solution Skypod}
+%\end{center}
+%\end{figure}
+%%
+%%\section*{Analyse structurelle du robot}
+%La structure du robot est présentée figure 3. Ce robot est constitué d'un châssis et de différents sous-systèmes.
+%
+%\begin{itemize}
+%  \item La partie commande contrôle le robot, communique avec le serveur et fournit des consignes aux autres sous-systèmes.
+%  \item Le système de déplacement au sol permet au robot de se déplacer au sein de l'entrepôt. Il est composé de deux roues motrices (droite et gauche) commandées par deux moteurs et de deux autres roues libres permettant de garantir une bonne stabilité au sol (figure 1).
+%  \item Deux systèmes de déplacement vertical (droit et gauche) permettent au robot de s'élever entre les racks afin d'atteindre une hauteur donnée. Ils entraînent quatre pignons situés dans chaque coin du robot qui eux-même engrènent sur des chaînes tendues verticalement le long des racks (figure 2 et figure 13). La liaison pignon/chaîne se comporte comme une liaison pignon/crémaillère.
+%  \item Deux systèmes de bras rétractables facilitent le déplacement au sol, chaque système de déplacement vertical est positionné sur un bras rétractable. Ils sont rentrés au sein du châssis lors des déplacements au sol, puis sortis lors des déplacements verticaux afin que les pignons entrent en contact avec les chaînes tendues. Un robot ne peut donc évoluer horizontalement qu'au sol.
+%  \item Un système de prise et dépose de bac translate le bac de sa position de stockage dans le rack à sa position de transport sur le robot (ou inversement). Il est constitué d'une fourche télescopique qui se déploie (figure 5 et figure 6) afin de se positionner sous le bac, puis rentre en déplaçant le bac avec elle.
+%\end{itemize}
+%
+%\begin{figure}[h]
+%\begin{center}
+%  \includegraphics[width=\textwidth]{1b2a6e18-b595-44db-a0d3-72f701a7df8f-03_378_606_2042_228}
+%\captionsetup{labelformat=empty}
+%\caption{Figure 5 - Prise d'un bac (fourche sous le bac dans un rack)}
+%\end{center}
+%\end{figure}
+%
+%\begin{figure}[h]
+%\begin{center}
+%  \includegraphics[width=\textwidth]{1b2a6e18-b595-44db-a0d3-72f701a7df8f-03_407_944_2051_900}
+%
+%\caption{Figure 6 - Fourche déployée}
+%\end{center}
+%\end{figure}
+
+\section*{Déroulement d'une préparation de commande}
+\begin{obj}
+Etudier le comportement séquentiel du robot lors d'une préparation de commande.
+\end{obj}
+
+
+Une préparation de commande se déroule en plusieurs étapes. Après réception de la demande, un traitement est effectué afin d'affecter les tâches à réaliser à un ou plusieurs robots (en fonction du nombre de produits demandés) et à un opérateur situé sur une station. Le ou les robots vont ensuite chercher les bacs contenant les produits nécessaires à la commande et les rapportent à la station. Enfin, l'opérateur effectue la mise en carton et expédie la commande.
+
+Le déplacement d'un robot lui permettant d'aller prendre un bac s'effectue en plusieurs phases. Le robot se déplace d'abord au sol de sa position de départ jusqu'au pied de la rangée verticale du rack qui contient le bac à prendre. Une fois en position, ses bras rétractables sortent, ce qui permet aux pignons motorisés d'engrener sur les chaînes tendues verticalement, générant ainsi l'ascension du robot. Pour prendre un bac, le robot s'immobilise de façon à ce que la surface de la fourche soit située 5 cm en-dessous du fond du bac. La fourche télescopique est alors sortie. Puis le robot monte de 10 cm , la fourche est ensuite rentrée afin de translater le bac sur le robot. Le robot peut désormais descendre jusqu'au sol, puis rentrer ses bras rétractables et se déplacer de nouveau au sol jusqu'à la station.
+
+Le comportement séquentiel du robot est décrit par le diagramme d'état donné par la figure 1 du document réponse (DR). Le tableau 1 fournit la description des ordres des moteurs et le tableau 2 les informations reçues par la partie commande. Dans cette partie, les durées des phases d'accélération et de décélération sont négligées pour tous les mouvements.
+
+\begin{table*}[h]
+\begin{center}
+\begin{tabular}{p{.3\linewidth}p{.3\linewidth}m{.3\linewidth}}
+\hline
+\textbf{Ordres moteurs} & \textbf{Rôle} & \textbf{Valeurs} \\
+\hline
+Système de déplacement au sol : 
+\begin{itemize}
+\item M\_RoueG 
+\item M\_RoueD 
+\end{itemize}
+& 
+Consigne de vitesse de la roue gauche 
+
+Consigne de vitesse de la roue droite 
+ 
+ & 
+Valeurs continues entre $-V_{\text {max }}$ et $V_{\text {max }}$ 
+
+\\ \hline
+
+Bras rétractables : 
+\begin{itemize}
+\item M\_BrasG 
+\item M\_BrasD 
+\end{itemize}
+&
+
+Déplacement du bras gauche 
+
+Déplacement du bras droit 
+
+&
+
+\begin{itemize}
+\item 0 pas de déplacement 
+\item $+1$ sortie des bras 
+\item $-1$ rentrée des bras 
+\end{itemize}
+\\ \hline
+
+Système de déplacement vertical :
+\begin{itemize}
+\item M\_PignonG 
+\item M\_PignonD 
+\end{itemize}
+&
+
+Consignes de vitesse des pignons gauches 
+
+Consignes de vitesse des pignons droits 
+
+&
+\begin{itemize}
+\item GV : grande vitesse 
+\item PV : petite vitesse 
+\item -GV / -PV : descente
+\item +GV / +PV : montée 
+\end{itemize}
+\\ \hline
+Fourche télescopique :
+\begin{itemize}
+\item 
+ M\_Fourche 
+ \end{itemize}
+ &
+ 
+ Déplacement de la fourche
+ 
+  &
+ 
+\begin{itemize}
+\item 0 pas de déplacement 
+\item $+1$ sortie de la fourche
+\item  $-1$ rentrée de la fourche 
+\end{itemize}
+\\ \hline
+
+\end{tabular}
+
+\caption{ Variables de sortie de la partie commande}
+\end{center}
+\end{table*}
+\end{document}
+
+
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Informations & Rôle \\
+\hline
+\begin{tabular}{l}
+Capteurs fin de course (détecteur) : \\
+BrasG\_sorti et BrasG\_rentré \\
+BrasD\_sorti et BrasD\_rentré \\
+Fourche\_sortie et Fourche\_rentrée \\
+\end{tabular} & \begin{tabular}{l}
+Leur sortie vaut 1 si la position détectée est atteinte, 0 sinon \\
+Capteurs du bras rétractable gauche \\
+Capteurs du bras rétractable droit \\
+Capteurs de la fourche \\
+\end{tabular} \\
+\hline
+\begin{tabular}{l}
+Position courante du robot : \\
+alt\_courante \\
+pos\_courante \\
+\end{tabular} & \begin{tabular}{l}
+position verticale du robot \\
+position au sol du robot \\
+\end{tabular} \\
+\hline
+\begin{tabular}{l}
+Position à atteindre : bac (bac $=0 \rightarrow$ prise de bac) \\
+pos\_finale \\
+etag \\
+\end{tabular} & \begin{tabular}{l}
+présence de bac sur le robot (mission de prise ou de dépose de bac) \\
+position au sol d'arrivée \\
+numéro d'étagère ( $0=$ étagère du bas) où se situe le bac à prendre \\
+\end{tabular} \\
+\hline
+\end{tabular}
+
+\caption{Variables d'entrée de la partie commande}
+\end{center}
+\end{table}
+
+On s'intéresse au scénario d'un robot allant chercher un bac sur l'étagère 1 (etag $=1$ ). On notera que la distance verticale entre deux étagères est de 40 cm . Pour ce scénario, le temps est discrétisé $t_{0}, t_{1}, \ldots, t_{k-1}, t_{k}, t_{k+1}, \ldots$ pour $k \in \mathbb{N}$ avec un pas de temps $t_{k+1}-t_{k}=\Delta t$ constant. On notera les constantes suivantes :
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Temps de rentrée/sortie de la fourche & $2 . \Delta t$ \\
+Temps de rentrée/sortie des bras rétractables & $2 . \Delta t$ \\
+Valeurs de consigne pour le déplacement vertical & $G V=5 / \Delta t \mathrm{~cm} \cdot \mathrm{~s}^{-1}$ et $P V=\frac{1}{2} G V$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\question{Compléter le chronogramme sur le DR1 en suivant le scénario suivant :
+
+\begin{itemize}
+  \item à $t_{0}$, le robot reçoit une nouvelle destination (pos\_finale et etag sont connus);
+  \item à $t_{1}$, le calcul de l'itinéraire est fini et le robot commence à se déplacer vers sa destination pos\_finale, sa trajectoire est en ligne droite (M\_RoueG = M\_RoueD) et la consigne est de $V_{\text {max }}$;
+  \item à $t_{3}$ le robot arrive à pos\_finale et commence à sortir les bras;
+  \item le robot monte et récupère le bac, puis redescend au sol;
+  \item une fois au sol, le robot retourne à sa position de départ (consigne de $-V_{\max }$ ).
+\end{itemize}}
