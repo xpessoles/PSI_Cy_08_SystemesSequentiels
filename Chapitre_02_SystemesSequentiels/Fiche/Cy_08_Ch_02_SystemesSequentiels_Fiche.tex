@@ -1,0 +1,41 @@
+%\setchapterimage{Fond_IA.png}
+\setchapterpreamble[u]{\margintoc}
+\chapter{Diagramme d'états}
+
+\marginnote{\xpComp{SEQ}{01}\xpComp{SEQ}{03}}
+
+Un diagramme d'états (ou diagrammes d'états -- transitions) permet de décrire le comportement d'un système. 
+Il est principalemnt constitué :
+\begin{itemize}
+\item d'un état simple, point de départ du fonctionnement du système;
+\item d'états simples au cours desquels se déroulent une suite d'actions;
+\item de transitions, permettant de passer d'un état à un autre.
+\end{itemize}
+
+Une transition est représentée par une flêche orientée d'un état à l'autre.  Pour déclencher le passage d'une transition, il est nécessaire qu'un \textbf{événement} ait lieu (clic de souris, appui sur un bouton, réception d'un signal...).  \sidenote{La fin de l'état peut servir d'événement pour passer à l'état suivant.}
+
+Le passage de la transition peut se faire, facultativement, si une \textbf{condition de garde} est vérifiée. Il s'agit d'une condtion booléenne qui doit être vraie lorsque l'événement associé à la transition apparaît.
+
+Enfin, il est possible de réaliser une action au passage d'une transtion. Cette action est appelée \textbf{effet}.
+
+Sur la forme, ces informations sont écrites au dessus de la transition de la manière suivante : 
+événement[condition]/effet.
+
+
+Prenons l'exemple du codeur incrémental. $S_{+}$ et $S_{-}$ désignent les conditions booléennes permettant respectivement d'incrémenter et de décrémenter le codeur.
+
+\begin{marginfigure}[-1cm]
+\includegraphics[width=\linewidth]{codeur_02.png}
+\end{marginfigure}
+
+\begin{figure*}[!h]
+\centering
+\begin{center}
+\includegraphics[width=\linewidth]{codeur.png}
+\end{center}
+\end{figure*}
+
+Au départ le système est éteint. En allumant le système il est nécessaire de réaliser une initialisation pour fixer l'origine du codeur. \sidenote{Dans le cas du CoMAX, il commence par aller en butée basse. Il remonte ensuite jusqu'à ce que la fente de la voie Z soit détectée. Das le cas du Bras Beta, la mise à zéro des codeurs se fait en alignant un réticule sur un tube à essai. Dans le cas du Control'X, c'est l'utilisateur qui fixe le 0 à la position qu'il désire \textit{etc}. }
+
+Plusieurs solutions solutions sont alors possibles pour incrémenter ou décrémenter le compteur. On peut par exemple réaliser cette action lorsqu'on franchit la transition. On peut aussi incrémenter le compteur dans une étape.
+
