@@ -37,18 +37,27 @@ Une transition est représentée par une flêche orientée d'un état à l'autre
 \item clic de souris, appui sur un bouton, réception d'un signal...;
 \item la fin de l'état peut servir d'événement pour passer à l'état suivant;
 \item le mot clef \textbf{after(x s)} permet de déclencher un événement au bout de x secondes;
-\item le mot clef \textbf{when(bool)} permet de déclencher un évenemtn quand le booléen bool passe à True.
+\item le mot clef \textbf{when(bool)} permet de déclencher un évenement quand le booléen bool passe à True.
 \end{itemize} 
 
-Si l'événement donné sur une transition se produit pendant le déroulement d'un état, ce déroulement est stoppé. S'il n'y a pas d'événement sur la transition l'évévenement provoquant le passage de la transition sera la fin des actions contenues dans le do.
+Le franchissement d'une transition peut donc se dérouler ainsi :
+\begin{itemize}
+\item si l'événement donné sur une transition se produit pendant le déroulement d'un état, ce déroulement est stoppé; 
+\item s'il n'y a pas d'événement sur la transition l'évévenement provoquant le passage de la transition sera la fin des actions contenues dans le do;
+\item lorsque cet événement apparait, l'état amont effectue le exit (s'il existe), l'effet attaché à la transition est réalisé (s'il existe) puis l'action attachée à l'entry de l'état aval est effectuée (si elle existe). 
+\end{itemize}
+
+
 
 Si une \textbf{condition de garde} existe dans la transition, il faudra que celle-si soit vérifiée lorsque l'événement survient.
 
 
-Enfin, il est possible de réaliser une action au passage d'une transtion. Cette action est appelée \textbf{effet}.
+%Enfin, il est possible de réaliser une action au passage d'une transtion. Cette action est appelée \textbf{effet}.
 
 Sur la forme, ces informations sont écrites au dessus de la transition de la manière suivante : 
 événement[condition]/effet.
+
+\newpage
 
 
 \marginnote[1cm] {Prise d'origine -- Dans le cas du CoMAX, il commence par aller en butée basse. Il remonte ensuite jusqu'à ce que la fente de la voie Z soit détectée. Das le cas du Bras Beta, la mise à zéro des codeurs se fait en alignant un réticule sur un tube à essai. Dans le cas du Control'X, c'est l'utilisateur qui fixe le 0 à la position qu'il désire \textit{etc}. }
