@@ -5,6 +5,7 @@
 \marginnote{\xpComp{SEQ}{01}\xpComp{SEQ}{03}}
 
 Un diagramme d'états (ou diagrammes d'états -- transitions) permet de décrire le comportement d'un système. 
+
 Il est principalemnt constitué :
 \begin{itemize}
 \item d'un état simple, point de départ du fonctionnement du système;
@@ -12,9 +13,37 @@ Il est principalemnt constitué :
 \item de transitions, permettant de passer d'un état à un autre.
 \end{itemize}
 
-Une transition est représentée par une flêche orientée d'un état à l'autre.  Pour déclencher le passage d'une transition, il est nécessaire qu'un \textbf{événement} ait lieu (clic de souris, appui sur un bouton, réception d'un signal...).  \sidenote{La fin de l'état peut servir d'événement pour passer à l'état suivant.}
+\begin{marginfigure}
+\centering
+\includegraphics[width=.7\linewidth]{stm_01}
+\end{marginfigure}
 
-Le passage de la transition peut se faire, facultativement, si une \textbf{condition de garde} est vérifiée. Il s'agit d'une condtion booléenne qui doit être vraie lorsque l'événement associé à la transition apparaît.
+Un état simple est représenté par un rectangle (bords arrondis). Il est doté d'un titre caractérisant ledit état. 
+Il peut contenir une suite d'actions. Ces actions sont parfois préfixées : 
+\begin{itemize}
+\item entry : action effectuée en entrant dans l'état;
+\item do : suite d'actions effectuées au cours de l'état;
+\item exit : action effectuée en sortant de l'état (après que les conditions de franchissement de la transition aient été validées). 
+\end{itemize}
+
+
+\begin{marginfigure}
+\centering
+\includegraphics[width=.7\linewidth]{stm_02}
+\end{marginfigure}
+
+Une transition est représentée par une flêche orientée d'un état à l'autre.  Pour déclencher le passage d'une transition, il est nécessaire qu'un \textbf{événement} ait lieu:
+\begin{itemize}
+\item clic de souris, appui sur un bouton, réception d'un signal...;
+\item la fin de l'état peut servir d'événement pour passer à l'état suivant;
+\item le mot clef \textbf{after(x s)} permet de déclencher un événement au bout de x secondes;
+\item le mot clef \textbf{when(bool)} permet de déclencher un évenemtn quand le booléen bool passe à True.
+\end{itemize} 
+
+Si l'événement donné sur une transition se produit pendant le déroulement d'un état, ce déroulement est stoppé. S'il n'y a pas d'événement sur la transition l'évévenement provoquant le passage de la transition sera la fin des actions contenues dans le do.
+
+Si une \textbf{condition de garde} existe dans la transition, il faudra que celle-si soit vérifiée lorsque l'événement survient.
+
 
 Enfin, il est possible de réaliser une action au passage d'une transtion. Cette action est appelée \textbf{effet}.
 
@@ -22,9 +51,19 @@ Sur la forme, ces informations sont écrites au dessus de la transition de la ma
 événement[condition]/effet.
 
 
+\marginnote[1cm] {Prise d'origine -- Dans le cas du CoMAX, il commence par aller en butée basse. Il remonte ensuite jusqu'à ce que la fente de la voie Z soit détectée. Das le cas du Bras Beta, la mise à zéro des codeurs se fait en alignant un réticule sur un tube à essai. Dans le cas du Control'X, c'est l'utilisateur qui fixe le 0 à la position qu'il désire \textit{etc}. }
+
+\begin{exemple}[Le codeur incrémental]
+
 Prenons l'exemple du codeur incrémental. $S_{+}$ et $S_{-}$ désignent les conditions booléennes permettant respectivement d'incrémenter et de décrémenter le codeur.
 
-\begin{marginfigure}[-1cm]
+Au départ le système est éteint. En allumant le système il est nécessaire de réaliser une initialisation pour fixer l'origine du codeur. 
+
+Plusieurs solutions solutions sont alors possibles pour incrémenter ou décrémenter le compteur. On peut par exemple réaliser cette action lorsqu'on franchit la transition. On peut aussi incrémenter le compteur dans un état.
+\end{exemple}
+
+
+\begin{marginfigure}[-.5cm]
 \includegraphics[width=\linewidth]{codeur_02.png}
 \end{marginfigure}
 
@@ -34,8 +73,3 @@ Prenons l'exemple du codeur incrémental. $S_{+}$ et $S_{-}$ désignent les cond
 \includegraphics[width=\linewidth]{codeur.png}
 \end{center}
 \end{figure*}
-
-Au départ le système est éteint. En allumant le système il est nécessaire de réaliser une initialisation pour fixer l'origine du codeur. \sidenote{Dans le cas du CoMAX, il commence par aller en butée basse. Il remonte ensuite jusqu'à ce que la fente de la voie Z soit détectée. Das le cas du Bras Beta, la mise à zéro des codeurs se fait en alignant un réticule sur un tube à essai. Dans le cas du Control'X, c'est l'utilisateur qui fixe le 0 à la position qu'il désire \textit{etc}. }
-
-Plusieurs solutions solutions sont alors possibles pour incrémenter ou décrémenter le compteur. On peut par exemple réaliser cette action lorsqu'on franchit la transition. On peut aussi incrémenter le compteur dans une étape.
-
